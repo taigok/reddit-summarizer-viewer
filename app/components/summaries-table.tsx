@@ -67,6 +67,55 @@ export default function SummariesTable({ summaries }: { summaries: Summary[] }) 
     ALCOHOL: "bg-lime-200 text-lime-900",
     OTHER: "bg-gray-100 text-gray-800",
   };
+
+  // typeごとに絵文字を割り当てるマッピング
+  const typeEmojiMap: Record<string, string> = {
+    TENT: "⛺️",
+    TARP: "⛺️",
+    TENT_ACCESSORY: "⛺️",
+    BACKPACK: "🎒",
+    SACK_POUCH: "🎒",
+    BACKPACK_ACCESSORY: "🎒",
+    TRAVEL_BAG: "🧳",
+    SLEEPING_BAG: "🛏️",
+    BIVY: "🛌",
+    HAMMOCK: "🛏️",
+    MAT: "🛏️",
+    PILLOW: "🛏️",
+    GROUNDSHEET: "🛏️",
+    SLEEP_ACCESSORY: "🛏️",
+    TOPS: "👕",
+    TSHIRT: "👕",
+    SHELL: "🧥",
+    INSULATION: "🧥",
+    BOTTOMS: "👖",
+    PANTS: "👖",
+    HEADGEAR: "🧢",
+    EYEWEAR: "🕶️",
+    NECKWEAR: "🧣",
+    GLOVES: "🧤",
+    SOCKS: "🧦",
+    SHOES: "👟",
+    BIKE_BAG: "🚲",
+    BIKE_ACCESSORY: "🚲",
+    COOKER: "🍳",
+    CUTLERY: "🍴",
+    TABLE: "🍽️",
+    STOVE: "🔥",
+    FIRE: "🔥",
+    BOTTLE_PURIFIER: "🚰",
+    STUFF_SACK: "👜",
+    FIELD_ACCESSORY: "🧰",
+    KNIFE_TOOL: "🔪",
+    WALLET: "👛",
+    UMBRELLA: "☂️",
+    CRAMPONS: "🧗",
+    EMERGENCY: "🚨",
+    LANTERN_HEADLIGHT: "🔦",
+    FOOD: "🍙",
+    ALCOHOL: "🍺",
+    OTHER: "🧰",
+  };
   return (
     <div className="overflow-x-auto">
       <Table className="min-w-full">
@@ -108,6 +157,7 @@ export default function SummariesTable({ summaries }: { summaries: Summary[] }) 
                           className={`inline-block px-2 py-1 rounded text-xs font-semibold cursor-pointer ${badgeColor}`}
                           title={`ブランド: ${t.brand || "-"}\n名前: ${t.name || "-"}\nタイプ: ${t.type || "-"}`}
                         >
+                          <span className="mr-1">{typeEmojiMap[typeKey] || "❓"}</span>
                           {t.name || t.brand || t.type || "-"}
                         </span>
                       );
