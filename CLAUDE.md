@@ -5,6 +5,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Language Preference
 Please respond in Japanese (日本語) when interacting with users in this repository.
 
+## Commit Message Guidelines
+Follow the Conventional Commits format:
+- `feat:` 新機能
+- `fix:` バグ修正
+- `chore:` ビルドプロセスや補助ツールの変更
+- `docs:` ドキュメントのみの変更
+- `style:` コードの意味に影響を与えない変更（空白、フォーマット等）
+- `refactor:` バグ修正や機能追加を含まないコード変更
+- `test:` テストの追加や修正
+
+コミットメッセージは英語で書き、必要に応じて本文に日本語の説明を追加してください。
+
 ## Project Overview
 
 Reddit Summarizer Viewer is a Next.js application that displays summaries of Reddit posts along with outdoor/ultralight gear items mentioned in those posts. It uses SQLite for data storage and presents information in a tabular format with categorized gear badges.
