@@ -4,6 +4,13 @@
     "dockerfile": "Dockerfile"
   },
   "remoteUser": "node",
+  "forwardPorts": [
+    3000
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,5 +23,6 @@
         "github.github-vscode-theme"
       ]
     }
-  }
+  },
+  "postCreateCommand": "git config --global user.name 'Taigo Kuriyama' && git config --global user.email 't.lorinza@gmail.com'"
 }
